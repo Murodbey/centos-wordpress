@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("run packer"){
             steps{
-                sh "packer build -var 'WORDPRESS_VERSION' image.json "
+                sh "packer build -var-file=~/centos-wordpress/versions.json image.json "
             }
         }
     }
